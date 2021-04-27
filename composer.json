@@ -1,9 +1,14 @@
 {
     "name": "foo-project/core",
-    "license": "AGPL-3.0-only",
     "type": "library",
+    "description": "A mono-repo project containing bundles and different types of tests.",
+    "license": "MIT",
+    "replace": {
+        "foo-project/test": "self.version"
+    },
     "require-dev": {
         "doctrine/annotations": "^1.12",
+        "drupol/php-conventions": "^4.0",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "^5",
         "symfony/config": "^5.2",
@@ -24,17 +29,14 @@
         }
     },
     "scripts": {
-        "merge": "vendor/bin/monorepo-builder merge --ansi",
-        "propagate": "vendor/bin/monorepo-builder propagate --ansi",
-        "validate-monorepo": "vendor/bin/monorepo-builder validate --ansi",
-        "release": "vendor/bin/monorepo-builder release patch --ansi",
-        "localize": "vendor/bin/monorepo-builder localize-composer-paths",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        }
-    },
-    "replace": {
-        "foo-project/test": "self.version"
+        },
+        "localize": "vendor/bin/monorepo-builder localize-composer-paths",
+        "merge": "vendor/bin/monorepo-builder merge --ansi",
+        "propagate": "vendor/bin/monorepo-builder propagate --ansi",
+        "release": "vendor/bin/monorepo-builder release patch --ansi",
+        "validate-monorepo": "vendor/bin/monorepo-builder validate --ansi"
     }
 }

@@ -32,3 +32,4 @@ docs/build/
 /bin/
 symfony.lock
 composer.lock
+.php_cs.cache

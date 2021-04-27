@@ -5,7 +5,6 @@
   xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
   backupGlobals="false"
   colors="true"
-  bootstrap="src/Tests/Fixtures/App/bootstrap.php"
 >
   <coverage processUncoveredFiles="true">
     <include>
@@ -19,7 +18,7 @@
     <server name="SHELL_VERBOSITY" value="-1" />
 
     <!-- ###+ symfony/framework-bundle ### -->
-    <env name="APP_ENV" value="test"/>
+    <env name="APP_ENV" value="dev"/>
     <env name="APP_SECRET" value="a82794aa0495c5d5203399cacc37909a"/>
     <!-- ###- symfony/framework-bundle ### -->
   </php>
@@ -29,9 +28,11 @@
     </testsuite>
   </testsuites>
   <!-- Run `composer require symfony/phpunit-bridge` before enabling this extension -->
-  <listeners>
-      <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
-  </listeners>
+  <!--
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
+    -->
   <!-- Run `composer require symfony/panther` before enabling this extension -->
   <!--
     <extensions>

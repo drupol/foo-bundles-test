@@ -2,12 +2,10 @@
 
 namespace Foo\TestBundle\Tests\Fixtures\App;
 
-use Foo\TestBundle\FooTestBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
-use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 final class Kernel extends BaseKernel
@@ -35,40 +33,23 @@ final class Kernel extends BaseKernel
         return $bundles;
     }
 
-    public function registerContainerConfiguration(LoaderInterface $loader) { }
-
-
-    protected function configureContainer(ContainerConfigurator $container, LoaderInterface $loader): void
+    protected function configureContainer(ContainerConfigurator $container): void
     {
-        $container->setParameter('kernel.project_dir', __DIR__);
+        $container->parameters()->set('kernel.project_dir', __DIR__);
 
-        $loader->load(__DIR__ . "/config/config_{$this->getEnvironment()}.yml");
-
-        $container->prependExtensionConfig(
+        $container->extension(
             'framework',
             [
-                'secret' => 'dunglas.fr',
-                'validation' => ['enable_annotations' => true],
-                'serializer' => ['enable_annotations' => true],
+                'secret' => 'secret',
                 'test' => true,
-                'session' => class_exists(SessionFactory::class) ? ['storage_factory_id' => 'session.storage.factory.mock_file'] : ['storage_id' => 'session.storage.mock_file'],
-                'profiler' => [
-                    'enabled' => true,
-                    'collect' => false,
-                ],
-                'messenger' => [
-                    'default_bus' => 'messenger.bus.default',
-                    'buses' => [
-                        'messenger.bus.default' => ['default_middleware' => 'allow_no_handlers'],
-                    ],
-                ],
                 'router' => ['utf8' => true],
+                'secrets' => false
             ]
     );
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import(__DIR__ . "/config/routing_{$this->getEnvironment()}.yml");
+        //$routes->import(__DIR__ . "/config/routing_{$this->getEnvironment()}.yml");
     }
 }

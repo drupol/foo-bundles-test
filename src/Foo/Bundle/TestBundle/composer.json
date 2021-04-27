@@ -8,9 +8,22 @@
         }
     },
     "require-dev": {
+        "symfony/browser-kit": "^5",
+        "symfony/flex": "^1",
         "symfony/framework-bundle": "^5.2",
         "symfony/dotenv": "^5.2",
         "phpunit/phpunit": "^9.5",
-        "symfony/test-pack": "^1.0"
+        "symfony/test-pack": "^1.0",
+        "symfony/config": "^5.2",
+        "symfony/http-kernel": "^5.2",
+        "symfony/http-foundation": "^5.2",
+        "symfony/routing": "^5.2",
+        "symfony/dependency-injection": "^5.2"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
     }
 }

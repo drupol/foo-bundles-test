@@ -14,10 +14,14 @@
   </coverage>
   <php>
     <ini name="error_reporting" value="-1"/>
-    <server name="APP_ENV" value="test" force="true"/>
     <server name="KERNEL_DIR" value="Tests/Fixtures/App/" />
     <server name="KERNEL_CLASS" value="Foo\TestBundle\Tests\Fixtures\App\Kernel" />
     <server name="SHELL_VERBOSITY" value="-1" />
+
+    <!-- ###+ symfony/framework-bundle ### -->
+    <env name="APP_ENV" value="test"/>
+    <env name="APP_SECRET" value="a82794aa0495c5d5203399cacc37909a"/>
+    <!-- ###- symfony/framework-bundle ### -->
   </php>
   <testsuites>
     <testsuite name="Project Test Suite">
@@ -25,11 +29,9 @@
     </testsuite>
   </testsuites>
   <!-- Run `composer require symfony/phpunit-bridge` before enabling this extension -->
-  <!--
-    <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
-    </listeners>
-    -->
+  <listeners>
+      <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+  </listeners>
   <!-- Run `composer require symfony/panther` before enabling this extension -->
   <!--
     <extensions>

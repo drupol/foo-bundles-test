@@ -25,3 +25,10 @@ docs/build/
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
+/tests/
+/config/
+/public/
+/bin/
+symfony.lock
+composer.lock

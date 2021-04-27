@@ -57,8 +57,5 @@ final class Kernel extends BaseKernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        foreach (glob(__DIR__ . '/config/*.yaml') as $file) {
-            $routes->import($file);
-        }
     }
 }

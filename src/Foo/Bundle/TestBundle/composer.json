@@ -9,7 +9,8 @@
     },
     "require-dev": {
         "symfony/framework-bundle": "^5.2",
-        "symfony/test-pack": "^1.0"
+        "symfony/test-pack": "^1.0",
+        "doctrine/annotations": "^1.12"
     },
     "scripts": {
         "auto-scripts": {

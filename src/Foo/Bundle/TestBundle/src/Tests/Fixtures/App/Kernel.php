@@ -20,18 +20,6 @@ final class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    public function __construct(string $environment, bool $debug)
-    {
-        parent::__construct($environment, $debug);
-
-        $this->environment = $_SERVER['APP_ENV'] ?? $environment;
-    }
-
-    public function getProjectDir()
-    {
-        return __DIR__;
-    }
-
     public function registerBundles()
     {
         return [
@@ -42,8 +30,6 @@ final class Kernel extends BaseKernel
 
     protected function configureContainer(ContainerConfigurator $container): void
     {
-        $container->parameters()->set('kernel.project_dir', __DIR__);
-
         $container->extension(
             'framework',
             [

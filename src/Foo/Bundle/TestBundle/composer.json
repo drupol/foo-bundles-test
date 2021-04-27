@@ -1,6 +1,6 @@
 {
     "name": "foo-project/test",
-    "license": "AGPL-3.0",
+    "license": "MIT",
     "type": "symfony-bundle",
     "autoload": {
         "psr-4": {

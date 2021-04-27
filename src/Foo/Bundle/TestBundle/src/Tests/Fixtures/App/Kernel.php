@@ -2,6 +2,7 @@
 
 namespace Foo\TestBundle\Tests\Fixtures\App;
 
+use Foo\TestBundle\FooTestBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -28,6 +29,7 @@ final class Kernel extends BaseKernel
     {
         $bundles = [
             new FrameworkBundle(),
+            new FooTestBundle(),
         ];
 
         return $bundles;

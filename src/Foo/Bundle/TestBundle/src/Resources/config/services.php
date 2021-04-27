@@ -10,6 +10,7 @@ return static function (ContainerConfigurator $container) {
     $container
         ->services()
         ->set('foo_test_bundle.response_alter', ResponseAlter::class)
+        ->public(true)
         ->autowire(true)
         ->autoconfigure(true);
 };

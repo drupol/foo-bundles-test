@@ -1,18 +1,24 @@
 <?php
 
+/**
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 namespace Foo\TestBundle\Tests\Unit\Controller;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class DemoControllerTest extends TestCase
 {
-    /**
-     * @test
-     */
-    public function it_does_a_smoke_test(): void
+    public function testItDoesASmokeTest(): void
     {
-        $this->assertTrue(true);
+        self::assertTrue(true);
     }
 }

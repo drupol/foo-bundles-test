@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
 namespace Foo\TestBundle\Tests\Fixtures\App;
 
 use Foo\TestBundle\FooTestBundle;
@@ -27,12 +34,10 @@ final class Kernel extends BaseKernel
 
     public function registerBundles()
     {
-        $bundles = [
+        return [
             new FooTestBundle(),
             new FrameworkBundle(),
         ];
-
-        return $bundles;
     }
 
     protected function configureContainer(ContainerConfigurator $container): void
@@ -45,13 +50,15 @@ final class Kernel extends BaseKernel
                 'secret' => 'secret',
                 'test' => true,
                 'router' => ['utf8' => true],
-                'secrets' => false
+                'secrets' => false,
             ]
-    );
+        );
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import(__DIR__ . '/../../../../resources/config/routes/test_bundle.yaml');
+        foreach (glob(__DIR__ . '/config/*.yaml') as $file) {
+            $routes->import($file);
+        }
     }
 }

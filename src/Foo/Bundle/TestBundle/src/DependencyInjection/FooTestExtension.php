@@ -11,26 +11,11 @@ namespace Foo\TestBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class FooTestExtension extends Extension implements PrependExtensionInterface
+final class FooTestExtension extends Extension
 {
-    public function prepend(ContainerBuilder $container) {
-        $container
-            ->prependExtensionConfig(
-                'controller',
-                [
-                    'routing' => [
-                        'resources' => [
-                            __DIR__ . '/../../resources/config/routes/test_bundle.yaml'
-                        ]
-                    ]
-                ]
-            );
-    }
-
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));

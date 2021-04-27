@@ -16,8 +16,6 @@ final class Foo
 {
     /**
      * @Route("/foo")
-     *
-     * @return Response
      */
     public function __invoke(): Response
     {

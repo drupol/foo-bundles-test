@@ -28,8 +28,8 @@ final class Kernel extends BaseKernel
     public function registerBundles()
     {
         $bundles = [
-            new FrameworkBundle(),
             new FooTestBundle(),
+            new FrameworkBundle(),
         ];
 
         return $bundles;
@@ -52,6 +52,6 @@ final class Kernel extends BaseKernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        //$routes->import(__DIR__ . "/config/routing_{$this->getEnvironment()}.yml");
+        $routes->import(__DIR__ . '/../../../../resources/config/routes/test_bundle.yaml');
     }
 }

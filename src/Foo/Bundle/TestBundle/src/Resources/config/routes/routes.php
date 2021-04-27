@@ -7,6 +7,6 @@ use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return static function (RoutingConfigurator $routes) {
     $routes
-        ->add('foo_bundle_homepage', '/')
+        ->add('foo_bundle_homepage', '/foo')
         ->controller(Foo::class);
 };

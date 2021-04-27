@@ -33,3 +33,4 @@ docs/build/
 
 .env
 .env.test
+src/Tests/Fixtures/App/var

@@ -15,6 +15,7 @@
         "symfony/phpunit-bridge": "^5.2",
         "symfony/routing": "^5.2",
         "symfony/test-pack": "^1.0",
+        "symfony/yaml": "^5.2",
         "symplify/monorepo-builder": "^9.2"
     },
     "autoload": {

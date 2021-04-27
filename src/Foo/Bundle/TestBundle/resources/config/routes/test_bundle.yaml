@@ -1,0 +1,3 @@
+test_bundle:
+    resource: '@FooTestBundle/Resources/config/routes/routes.php'
+    prefix: /

@@ -1,0 +1,16 @@
+{
+    "name": "foo-project/test",
+    "license": "AGPL-3.0",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Foo\\TestBundle\\": "src/"
+        }
+    },
+    "require-dev": {
+        "symfony/framework-bundle": "^5.2",
+        "symfony/dotenv": "^5.2",
+        "phpunit/phpunit": "^9.5",
+        "symfony/test-pack": "^1.0"
+    }
+}

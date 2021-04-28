@@ -1,0 +1,15 @@
+default:
+    extensions:
+        FriendsOfBehat\SymfonyExtension:
+            kernel:
+                class: Foo\TestBundle\Tests\Fixtures\App\Kernel
+        Behat\MinkExtension:
+            base_url: 'http://example.com/'
+            sessions:
+                default:
+                    symfony: ~
+    suites:
+        default:
+            contexts:
+                - Foo\TestBundle\Tests\Fixtures\Context\DemoContext
+                - Behat\MinkExtension\Context\MinkContext

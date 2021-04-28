@@ -1,0 +1,5 @@
+services:
+    Foo\TestBundle\Tests\Fixtures\Context\DemoContext:
+        public: true
+        arguments:
+            - "%kernel.environment%"

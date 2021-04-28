@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Foo\TestBundle\Tests\Fixtures\App;
 
 use Foo\TestBundle\FooTestBundle;
+use FriendsOfBehat\SymfonyExtension\Bundle\FriendsOfBehatSymfonyExtensionBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -23,6 +24,7 @@ final class Kernel extends BaseKernel
     public function registerBundles()
     {
         return [
+            new FriendsOfBehatSymfonyExtensionBundle(),
             new FooTestBundle(),
             new FrameworkBundle(),
         ];
@@ -30,6 +32,8 @@ final class Kernel extends BaseKernel
 
     protected function configureContainer(ContainerConfigurator $container): void
     {
+        $container->import(__DIR__ . '/config/services.yaml');
+
         $container->extension(
             'framework',
             [
@@ -43,7 +47,7 @@ final class Kernel extends BaseKernel
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        foreach (glob(__DIR__ . '/config/*.yaml') as $file) {
+        foreach (glob(__DIR__ . '/config/routes/*.yaml') as $file) {
             $routes->import($file);
         }
     }

@@ -1,4 +1,4 @@
 app_bundle:
     # loads routes from the YAML or XML files found in some bundle directory
-    resource: '../../../../../resources/config/routes/'
+    resource: '../../../../../../resources/config/routes/'
     type: directory

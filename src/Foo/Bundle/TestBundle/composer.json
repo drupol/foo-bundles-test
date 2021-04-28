@@ -10,7 +10,12 @@
     "require-dev": {
         "symfony/framework-bundle": "^5.2",
         "symfony/test-pack": "^1.0",
-        "doctrine/annotations": "^1.12"
+        "doctrine/annotations": "^1.12",
+        "behat/behat": "^3.8",
+        "friends-of-behat/mink": "^1.9",
+        "friends-of-behat/mink-extension": "^2.5",
+        "friends-of-behat/mink-browserkit-driver": "^1.5",
+        "friends-of-behat/symfony-extension": "^2.0"
     },
     "scripts": {
         "auto-scripts": {

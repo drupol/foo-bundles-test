@@ -3,6 +3,9 @@
     "type": "library",
     "description": "A mono-repo project containing bundles and different types of tests.",
     "license": "MIT",
+    "replace": {
+        "foo-project/test": "self.version"
+    },
     "require-dev": {
         "behat/behat": "^3.8",
         "doctrine/annotations": "^1.12",
@@ -13,9 +16,6 @@
         "phpunit/phpunit": "^9.5",
         "symfony/framework-bundle": "^5.2",
         "symfony/test-pack": "^1.0"
-    },
-    "replace": {
-        "foo-project/test": "self.version"
     },
     "autoload": {
         "psr-4": {
